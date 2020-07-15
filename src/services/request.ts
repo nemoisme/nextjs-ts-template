@@ -43,10 +43,12 @@ instance.interceptors.response.use((config) => {
 })
 
 
-module.exports = IRequestMethods.reduce((cur: any, method:any) => {
+const request  = IRequestMethods.reduce((cur: any, method:any) => {
   cur[method] = (url: string, params: any) => instance.request({method, url, params })
   return cur
 }, {})
+
+export  default request
 
 
 

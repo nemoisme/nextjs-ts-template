@@ -1,6 +1,5 @@
 
-import {get} from './../services/request'
-
+import request from '../services/request'
 
 import React,{useEffect} from 'react'
 
@@ -16,8 +15,7 @@ const Index = (props:IProps)=>{
     getList()
   },[])
   const getList = async()=>{
-    const res = await get('/get/test',{a:1,b:2})
-    debugger
+    const res = await request.get('/get/test',{a:1,b:2})
   }
   console.log(props)
   return <div>Welcome to next.js!</div>
